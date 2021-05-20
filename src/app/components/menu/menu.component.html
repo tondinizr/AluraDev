@@ -1,0 +1,21 @@
+<div class="menu">
+  <div *ngIf="platform | async as plat">
+    <h2 class="menu__content__title" *ngIf="plat === 'desktop'">Menu</h2>
+  </div>
+  <a [routerLink]="['/editor']" routerLinkActive="active" class="menu__link">
+    <div class="menu__link__container">
+      <fa-icon [icon]="faCode" class="menu__link__container__icon"></fa-icon>
+    </div>
+    <span class="menu__link__text">Editor de Código</span>
+  </a>
+  <a
+    [routerLink]="['/comunidade']"
+    routerLinkActive="active"
+    class="menu__link"
+  >
+    <div class="menu__link__container">
+      <fa-icon [icon]="faUsers" class="menu__link__container__icon"></fa-icon>
+    </div>
+    <span class="menu__link__text">Comunidade</span>
+  </a>
+</div>

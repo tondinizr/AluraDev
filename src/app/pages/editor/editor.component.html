@@ -1,0 +1,12 @@
+<section class="editor__{{ platform | async }}">
+  <app-code-editor
+    [(code)]="code"
+    [(language)]="language"
+    [color]="color"
+  ></app-code-editor>
+  <app-project-properties
+    [language]="language"
+    [(color)]="color"
+    [codigo]="code"
+  ></app-project-properties>
+</section>

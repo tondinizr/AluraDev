@@ -1,0 +1,48 @@
+<form [formGroup]="propertiesForm" class="options {{ platform | async }}">
+  <div class="options__project">
+    <h2 class="options__project__title">Seu projeto</h2>
+    <input
+      formControlName="name"
+      class="options__project__input"
+      type="text"
+      placeholder="Nome do seu projeto"
+    />
+    <textarea
+      formControlName="description"
+      class="options__project__textarea"
+      name=""
+      placeholder="Descrição do seu projeto"
+      id=""
+      cols="30"
+      rows="2"
+    ></textarea>
+  </div>
+  <div class="options__personalization" id="personalization">
+    <h2 class="options__personalization__title">Personalização</h2>
+    <section class="not-desktop">
+      <input
+        formControlName="language"
+        class="options__personalization__language"
+        name="languages"
+        id="languages"
+        placeholder="Esperando formatação"
+      />
+      <input
+        id="color-input"
+        formControlName="color"
+        class="options__personalization__input"
+        type="color"
+        (change)="onColorChange()"
+      />
+      <div id="color-contet" class="options__personalization__color">
+        <label
+          [style.background]="color"
+          for="color-input"
+          id="pseudo-color-input"
+          tabindex="0"
+        ></label>
+      </div>
+    </section>
+  </div>
+  <button class="options__button" (click)="sendData()">Salvar projeto</button>
+</form>

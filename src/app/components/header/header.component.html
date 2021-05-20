@@ -1,0 +1,81 @@
+<header class="header__{{ platform | async }}">
+  <div class="header__container">
+    <div class="header__container__logo">
+      <a routerLink="/">
+        <img src="../../../assets/Logo.svg" alt="Alura Dev" />
+      </a>
+    </div>
+    <div class="header__container__tools">
+      <app-search-bar
+        [(value)]="valueSearch"
+        class="header__container__tools__search-bar"
+      ></app-search-bar>
+      <div class="header__container__tools__search">
+        <fa-icon
+          [icon]="search ? faAngleUp : faSearch"
+          (click)="toggleSearch()"
+        ></fa-icon>
+      </div>
+    </div>
+
+    <div
+      *ngIf="(platform | async) === 'desktop'"
+      class="header__container__avatar"
+    >
+      <app-author [author]="author"></app-author>
+    </div>
+    <div
+      *ngIf="(platform | async) != 'desktop'"
+      class="header__container__Menu"
+    >
+      <div
+        *ngIf="
+          (valueSearch === '' && (platform | async) === 'tablet') ||
+          (platform | async) === 'mobile'
+        "
+        (click)="toggleMenu()"
+      >
+        <fa-icon [class.actived]="isOpen" clas="menu" [icon]="faBars"></fa-icon>
+      </div>
+      <div
+        *ngIf="valueSearch != '' && (platform | async) === 'tablet'"
+        (click)="clearSearch()"
+      >
+        <fa-icon [icon]="faTimes"></fa-icon>
+      </div>
+    </div>
+  </div>
+  <div id="search__mobile" class="search__mobile" [class.closed]="!search">
+    <app-search-bar
+      class="search__mobile__bar"
+      [(value)]="valueSearch"
+    ></app-search-bar>
+    <div
+      class="search__mobile__content"
+      [class.disabled]="valueSearch === ''"
+      (click)="clearSearch()"
+    >
+      <fa-icon class="search__mobile__content__icon" [icon]="faTimes"></fa-icon>
+    </div>
+  </div>
+</header>
+<div
+  *ngIf="(platform | async) != 'desktop'"
+  class="menu__overlay"
+  [ngClass]="isOpen ? 'open' : 'close'"
+  (click)="toggleMenu()"
+>
+  <div class="menu__overlay__toggle">
+    <fa-icon
+      class="menu__overlay__toggle__close"
+      [class.actived]="isOpen"
+      [class.mobile]="(platform | async) === 'mobile'"
+      [icon]="faTimes"
+    ></fa-icon>
+  </div>
+  <nav class="menu__overlay__nav" (click)="stopPropagation($event)">
+    <app-menu class="menu__overlay__nav__navigation"></app-menu>
+    <hr class="menu__overlay__nav__separator" />
+    <app-author [author]="author" class="menu__overlay__nav__user"></app-author>
+  </nav>
+</div>

@@ -1,0 +1,39 @@
+.form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  &__input {
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg-normal);
+    border: none;
+    border-radius: 8px;
+    padding: 1rem;
+    color: var(--white);
+    outline: 0;
+  }
+
+  &__input:hover,
+  &__input:focus {
+    background-color: var(--bg-hover);
+    transition: background-color 0.5s;
+  }
+
+  &__input:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+
+  &__input:focus:-moz-placeholder {
+    color: transparent;
+  }
+
+  &__input:focus::-moz-placeholder {
+    color: transparent;
+  }
+
+  &__input:focus:-ms-input-placeholder {
+    color: transparent;
+  }
+}

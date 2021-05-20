@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --white: #ffffff;
+  --white-transparency: #ffffff29;
+  --dark-gray: #141414;
+  --green: #27c93f;
+  --red: #ff5f56;
+  --yellow: #ffbd2e;
+  --blue-100: #96b9fd;
+  --blue-200: #7ba4fc;
+  --blue-300: #5081fb;
+  --dark-blue: #051d3b;
+  --bg-normal: rgba(255, 255, 255, 0.16);
+  --bg-hover: rgba(255, 255, 255, 0.24);
+}
+
+body {
+  background-color: var(--dark-blue);
+  font-family: "Inter", sans-serif !important;
+}

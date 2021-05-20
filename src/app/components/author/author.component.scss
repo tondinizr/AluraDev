@@ -1,0 +1,21 @@
+.link {
+  color: var(--white);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 106px;
+  height: 56px;
+  justify-content: center;
+  border-radius: 8px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  transition: all 0.3s;
+
+  p {
+    margin-left: 1rem;
+  }
+}
+
+.link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}

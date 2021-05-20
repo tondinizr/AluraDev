@@ -1,0 +1,165 @@
+.editor {
+  width: 100%;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    &__border {
+      height: 15rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      border-radius: 0.5rem;
+
+      &__console {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        border-radius: 0.5rem;
+        resize: none;
+
+        &__decoration {
+          margin: 1rem;
+          align-self: flex-start;
+          display: flex;
+
+          .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+          }
+
+          .red {
+            background: #ff5f56;
+          }
+
+          .yellow {
+            background: #ffbd2e;
+          }
+
+          .green {
+            background: #27c93f;
+          }
+        }
+
+        &__content {
+          width: calc(100% - 2rem);
+          height: 43.75rem;
+          border-radius: 0.5rem;
+          margin-bottom: 1rem;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 0.875rem;
+          line-height: 1.125rem;
+          background: none;
+          box-shadow: none;
+          border: none;
+
+          &__edit {
+            display: flex;
+            width: 100%;
+            height: 11.25rem;
+
+            &__code {
+              width: 100%;
+              height: 100%;
+              font-family: "Roboto Mono", monospace;
+              resize: none;
+              background: none;
+              color: var(--white);
+              border: none;
+              outline: none;
+            }
+
+            &__code::-webkit-scrollbar {
+              width: 12px; /* width of the entire scrollbar */
+            }
+
+            &__code::-webkit-scrollbar-track {
+              background: var(--dark-blue); /* color of the tracking area */
+              opacity: 0.5;
+            }
+
+            &__code::-webkit-scrollbar-thumb {
+              background-color: var(--blue-300); /* color of the scroll thumb */
+              border-radius: 20px; /* roundness of the scroll thumb */
+              border: 3px solid var(--dark-blue); /* creates padding around scroll thumb */
+            }
+          }
+
+          &__code {
+            max-width: 100%;
+            max-height: 100%;
+            display: flex;
+            white-space: pre-wrap;
+
+            code {
+              background: none;
+              width: 100%;
+              height: 11.25rem;
+              padding: 0;
+            }
+
+            code::-webkit-scrollbar {
+              width: 12px; /* width of the entire scrollbar */
+            }
+
+            code::-webkit-scrollbar-track {
+              background: var(--dark-blue); /* color of the tracking area */
+              opacity: 0.5;
+            }
+
+            code::-webkit-scrollbar-thumb {
+              background-color: var(--blue-300); /* color of the scroll thumb */
+              border-radius: 20px; /* roundness of the scroll thumb */
+              border: 3px solid var(--dark-blue); /* creates padding around scroll thumb */
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__highlight {
+    height: 3.5rem;
+    width: 100%;
+    margin-top: 2rem;
+
+    &__button {
+      width: 100%;
+      height: 100%;
+      color: var(--white);
+      font-size: 1rem;
+      background: rgba(80, 129, 251, 0.08);
+      border-radius: 0.5rem;
+      border: none;
+      transition: all 0.3s;
+      outline: none;
+    }
+
+    &__button:disabled {
+      opacity: 0.4;
+      color: var(--white);
+    }
+
+    &__button:hover:not([disabled]) {
+      background: rgba(80, 129, 251, 0.16);
+    }
+
+    &__button:focus:not([disabled]) {
+      background: rgba(80, 129, 251, 0.24);
+    }
+
+    &__button:active:not([disabled]) {
+      background: rgba(80, 129, 251, 0.16);
+      border: 4px solid rgba(80, 129, 251, 0.24);
+    }
+  }
+}

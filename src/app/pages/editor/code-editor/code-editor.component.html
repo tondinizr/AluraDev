@@ -1,0 +1,47 @@
+<div class="editor">
+  <form [formGroup]="codeForm" class="editor__container">
+    <div class="editor__container__border" [style.background]="color">
+      <div class="editor__container__border__console">
+        <div class="editor__container__border__console__decoration">
+          <div class="dot red"></div>
+          <div class="dot yellow"></div>
+          <div class="dot green"></div>
+        </div>
+        <div class="editor__container__border__console__content">
+          <div
+            *ngIf="!highlighted"
+            class="editor__container__border__console__content__edit"
+          >
+            <textarea
+              formControlName="code"
+              class="editor__container__border__console__content__edit__code"
+              [value]="code"
+            ></textarea>
+          </div>
+          <pre class="editor__container__border__console__content__code">
+              <code
+                *ngIf="highlighted"
+                [lang]="'html'"
+                (highlighted)="onHighlight($event)"
+                [highlight]="codeForm.get('code')?.value" [lineNumbers]="true"></code>
+            </pre>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="editor__highlight">
+    <button
+      [disabled]="!codeForm.valid"
+      (click)="highlight()"
+      class="editor__highlight__button"
+    >
+      {{
+        !this.codeForm.get("code")?.value
+          ? "Digite o código"
+          : highlighted
+          ? "Editar o codigo"
+          : "Visualizar com o highlight"
+      }}
+    </button>
+  </div>
+</div>
