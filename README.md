@@ -1,27 +1,35 @@
-# AluraChallenge
+![banner](./src/assets/AluraDev.png)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
+# AluraDev
 
-## Development server
+O AluraDev é uma aplicação desenvolvida durante o [**Alura Challenges | Front-end**](https://www.alura.com.br/challenges/front-end/).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+| Semana  | Conteúdo                                                                                                                                               |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1ª      | `Implementacao do projeto AluraDev com HTML e CSS baseado em um Figma`                                                                                 |
+| 2ª      | `Uso de JavaScript para adicionar comportamento no sistema`                                                                                            |
+| 3ª & 4ª | `Frameworks SPA, Integrações com APIs. Cards cada vez mais complexos, com muitas sugestões de implementação para você chegar ao avançado do Front-end` |
 
-## Code scaffolding
+Esse projeto foi gerado usando o [Angular CLI](https://github.com/angular/angular-cli) versão 11.2.1.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Instalação
 
-## Build
+Instale os pacotes `npm` descritos no` package.json` e verifique se funciona:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```shel
+npm install
+```
 
-## Running unit tests
+## Subir o Projeto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Execute o seguinte comando para um servidor de desenvolvimento:
 
-## Running end-to-end tests
+```shel
+ng serve
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Navegue até `http://localhost:4200/`. O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
 
-## Further help
+## License
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[MIT](https://choosealicense.com/licenses/mit/)
