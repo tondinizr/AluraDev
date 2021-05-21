@@ -2,7 +2,7 @@
   <div class="header__container">
     <div class="header__container__logo">
       <a routerLink="/">
-        <img src="../../../assets/Logo.svg" alt="Alura Dev" />
+        <img [src]="logoImage" alt="Alura Dev" />
       </a>
     </div>
     <div class="header__container__tools">
@@ -22,7 +22,7 @@
       *ngIf="(platform | async) === 'desktop'"
       class="header__container__avatar"
     >
-      <app-author [author]="author"></app-author>
+      <app-author author="Harry" [authorImag]="authorImage"></app-author>
     </div>
     <div
       *ngIf="(platform | async) != 'desktop'"
@@ -76,6 +76,10 @@
   <nav class="menu__overlay__nav" (click)="stopPropagation($event)">
     <app-menu class="menu__overlay__nav__navigation"></app-menu>
     <hr class="menu__overlay__nav__separator" />
-    <app-author [author]="author" class="menu__overlay__nav__user"></app-author>
+    <app-author
+      author="Harry"
+      [authorImag]="authorImage"
+      class="menu__overlay__nav__user"
+    ></app-author>
   </nav>
 </div>

@@ -6,14 +6,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./author.component.scss'],
 })
 export class AuthorComponent implements OnInit {
-  @Input() author!: Author;
+  @Input() author!: string;
+  @Input() authorImag!: any;
 
   constructor() {}
 
   ngOnInit() {}
-}
-
-interface Author {
-  name: string;
-  avatarUrl: string;
 }

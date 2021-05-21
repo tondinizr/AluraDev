@@ -14,6 +14,8 @@ import { PlatformService } from 'src/app/services/platform/platform.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  logoImage = '../../../assets/Logo.svg';
+  authorImage = '../../../assets/User/Photo.png';
   valueSearch = '';
   platform: Observable<string>;
   isOpen = false;
