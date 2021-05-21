@@ -27,22 +27,17 @@
         id="languages"
         placeholder="Esperando formatação"
       />
-      <input
-        id="color-input"
-        formControlName="color"
-        class="options__personalization__input"
-        type="color"
-        (change)="onColorChange()"
-      />
-      <div id="color-contet" class="options__personalization__color">
-        <label
+      <button
+        id="color"
+        class="options__personalization__color"
+        (click)="onColorChange()"
+      >
+        <div
+          class="options__personalization__color__selector"
           [style.background]="color"
-          for="color-input"
-          id="pseudo-color-input"
-          tabindex="0"
-        ></label>
-      </div>
+        ></div>
+      </button>
     </section>
   </div>
-  <button class="options__button" (click)="sendData()">Salvar projeto</button>
+  <button [disabled]="!propertiesForm.valid" class="options__button" (click)="sendData()">Salvar projeto</button>
 </form>

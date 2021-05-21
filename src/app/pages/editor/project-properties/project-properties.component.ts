@@ -16,12 +16,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./project-properties.component.scss'],
 })
 export class ProjectPropertiesComponent implements OnInit {
-  @Input() color = '#6BD1FF';
+  @Input() color = '';
   @Input() language!: string;
   @Input() codigo!: string;
   @Output() colorChange = new EventEmitter<string>();
   propertiesForm!: FormGroup;
   platform: Observable<any>;
+  count = 0;
+
+  colors = ['#6BD1FF', '#9AFF6B', '#6B83FF', '#FFC46B', '#FF6BCD'];
 
   constructor(private fb: FormBuilder, pS: PlatformService) {
     this.platform = pS.getPlatform();
@@ -32,25 +35,26 @@ export class ProjectPropertiesComponent implements OnInit {
       name: ['', [Validators.required]],
       description: ['', [Validators.required]],
       language: ['', [Validators.required]],
-      color: [this.color, [Validators.required]],
+      color: ['', [Validators.required]],
       codigo: ['', [Validators.required]],
     });
     this.onColorChange();
   }
 
-  onColorChange(): void {
-    const cor = this.propertiesForm.get('color')?.value;
-    this.colorChange.emit(cor);
-  }
-
-  handleChange(event: any): void {
-    console.log(event);
-    console.log(this.language);
-    console.log(this.codigo);
-  }
-
   sendData() {
     console.table(this.propertiesForm.value);
+  }
+
+  onColorChange() {
+    const cor = this.colors[this.count];
+    if (this.count < this.colors.length - 1) {
+      this.count++;
+    } else {
+      this.count = 0;
+    }
+    this.color = cor;
+    this.colorChange.emit(cor);
+    this.propertiesForm.get('color')?.setValue(cor);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
