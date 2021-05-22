@@ -1,11 +1,9 @@
 <form class="container">
   <div class="container__border" [style.background]="color">
     <div class="container__border__console">
-      <div class="container__border__console__decoration">
-        <div class="dot red"></div>
-        <div class="dot yellow"></div>
-        <div class="dot green"></div>
-      </div>
+      <app-dots-container
+        class="container__border__console__dots"
+      ></app-dots-container>
       <div class="container__border__console__content">
         <div
           *ngIf="!highlighted"

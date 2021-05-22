@@ -21,29 +21,10 @@
       border-radius: 0.5rem;
       resize: none;
 
-      &__decoration {
+      &__dots {
         margin: 1rem;
         align-self: flex-start;
         display: flex;
-
-        .dot {
-          width: 12px;
-          height: 12px;
-          border-radius: 50%;
-          margin-right: 0.5rem;
-        }
-
-        .red {
-          background: #ff5f56;
-        }
-
-        .yellow {
-          background: #ffbd2e;
-        }
-
-        .green {
-          background: #27c93f;
-        }
       }
 
       &__content {
@@ -76,18 +57,18 @@
           }
 
           &__code::-webkit-scrollbar {
-            width: 12px; /* width of the entire scrollbar */
+            width: 12px;
           }
 
           &__code::-webkit-scrollbar-track {
-            background: var(--dark-blue); /* color of the tracking area */
+            background: var(--dark-blue);
             opacity: 0.5;
           }
 
           &__code::-webkit-scrollbar-thumb {
-            background-color: var(--blue-300); /* color of the scroll thumb */
-            border-radius: 20px; /* roundness of the scroll thumb */
-            border: 3px solid var(--dark-blue); /* creates padding around scroll thumb */
+            background-color: var(--blue-300);
+            border-radius: 20px;
+            border: 3px solid var(--dark-blue);
           }
         }
 
@@ -105,18 +86,18 @@
           }
 
           code::-webkit-scrollbar {
-            width: 12px; /* width of the entire scrollbar */
+            width: 12px;
           }
 
           code::-webkit-scrollbar-track {
-            background: var(--dark-blue); /* color of the tracking area */
+            background: var(--dark-blue);
             opacity: 0.5;
           }
 
           code::-webkit-scrollbar-thumb {
-            background-color: var(--blue-300); /* color of the scroll thumb */
-            border-radius: 20px; /* roundness of the scroll thumb */
-            border: 3px solid var(--dark-blue); /* creates padding around scroll thumb */
+            background-color: var(--blue-300);
+            border-radius: 20px;
+            border: 3px solid var(--dark-blue);
           }
         }
       }

@@ -1,0 +1,22 @@
+.decoration {
+  display: flex;
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+  }
+
+  .red {
+    background: #ff5f56;
+  }
+
+  .yellow {
+    background: #ffbd2e;
+  }
+
+  .green {
+    background: #27c93f;
+  }
+}

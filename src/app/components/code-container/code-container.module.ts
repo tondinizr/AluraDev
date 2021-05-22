@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CodeContainerComponent } from './code-container.component';
 import { HighlightModule } from 'ngx-highlightjs';
 
+import { CodeContainerComponent } from './code-container.component';
+import { DotsContainerComponent } from './dots-container/dots-container.component';
 @NgModule({
-  declarations: [CodeContainerComponent],
+  declarations: [CodeContainerComponent, DotsContainerComponent],
   imports: [CommonModule, HighlightModule],
   exports: [CodeContainerComponent],
 })

@@ -73,6 +73,7 @@
     outline: none;
     background: var(--dark-blue);
     padding: 0.5rem;
+    transition: padding 0.1s, border 0.2s;
 
     &__selector {
       width: 100%;
@@ -81,11 +82,19 @@
     }
   }
 
+  &__personalization__color:active {
+    padding: 0;
+    border: 0;
+    box-shadow: 0 0 0 2px #88b8ff;
+    transition: box-shadow 0.3s;
+  }
+
   &__project__input:focus,
   &__project__textarea:focus,
   &__personalization__language:focus,
   &__button:focus {
     box-shadow: 0 0 0 2px #88b8ff;
+    transition: box-shadow 0.3s;
   }
 
   &__personalization,
