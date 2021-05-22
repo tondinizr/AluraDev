@@ -1,0 +1,52 @@
+.code {
+  @media (min-width: 1120px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+  }
+
+  &__list {
+    &__card {
+      background: rgba(0, 0, 0, 0.16);
+      border-radius: 8px;
+      flex-shrink: 1;
+
+      @media (max-width: 1120px) {
+        margin-bottom: 2rem;
+      }
+
+      &__content {
+      }
+      &__info {
+        color: var(--white);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1.5rem;
+
+        &__title {
+          font-weight: bold;
+          font-size: 1.3125rem;
+          line-height: 1.9375rem;
+        }
+
+        &__descripiton {
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
+
+        &__social {
+          @media (min-width: 810px) {
+            display: none;
+          }
+
+          margin-top: 2rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<div class="social">
+  <div class="social__comments">
+    <fa-icon class="social__comments__icon" [icon]="faComment"></fa-icon>
+    <p class="social__comments__quantity">{{ socialData.comments }}</p>
+  </div>
+  <div class="social__likes">
+    <fa-icon
+      class="social__likes__icon"
+      [class.liked]="socialData.liked"
+      [icon]="faHeart"
+    ></fa-icon>
+    <p class="social__likes__quantity">{{ socialData.likes }}</p>
+  </div>
+</div>

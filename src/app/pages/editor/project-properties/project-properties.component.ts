@@ -42,7 +42,7 @@ export class ProjectPropertiesComponent implements OnInit {
   }
 
   sendData() {
-    console.table(this.propertiesForm.value);
+    console.log(this.propertiesForm.value);
   }
 
   onColorChange() {

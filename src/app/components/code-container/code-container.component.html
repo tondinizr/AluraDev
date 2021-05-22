@@ -1,0 +1,30 @@
+<form class="container">
+  <div class="container__border" [style.background]="color">
+    <div class="container__border__console">
+      <div class="container__border__console__decoration">
+        <div class="dot red"></div>
+        <div class="dot yellow"></div>
+        <div class="dot green"></div>
+      </div>
+      <div class="container__border__console__content">
+        <div
+          *ngIf="!highlighted"
+          class="container__border__console__content__edit"
+        >
+          <textarea
+            class="container__border__console__content__edit__code"
+            [value]="code"
+          ></textarea>
+        </div>
+        <pre class="container__border__console__content__code">
+              <code
+                *ngIf="highlighted"
+                (highlighted)="onHighlight($event)"
+                [highlight]="code" [lineNumbers]="true"
+                style="white-space: pre-wrap"
+                ></code>
+            </pre>
+      </div>
+    </div>
+  </div>
+</form>

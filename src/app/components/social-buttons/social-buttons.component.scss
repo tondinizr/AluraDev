@@ -1,0 +1,32 @@
+.social {
+  display: flex;
+
+  &__comments,
+  &__likes {
+    display: flex;
+    align-items: center;
+    padding: 0.703rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    transition: all 0.5s;
+
+    &__icon {
+      margin-right: 0.625rem;
+      font-size: 1.25rem;
+    }
+
+    .liked {
+      color: #f65151;
+    }
+  }
+
+  &__comments:hover,
+  &__likes:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  &__comments:active,
+  &__likes:active {
+    background: rgba(255, 255, 255, 0.16);
+  }
+}

@@ -13,6 +13,9 @@ import { AppComponent } from './app.component';
 import { HeaderModule } from './components/header/header.module';
 import { PageTemplateModule } from './pages/page-template/page-template.module';
 import { PlatformService } from './services/platform/platform.service';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './services/data/in-memory-data.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +25,10 @@ import { PlatformService } from './services/platform/platform.service';
     HeaderModule,
     PageTemplateModule,
     HighlightModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false,
+    }),
   ],
   providers: [
     PlatformService,

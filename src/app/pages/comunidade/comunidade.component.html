@@ -1,3 +1,24 @@
-<p>
-  comunidade works!
-</p>
+<ul class="code">
+  <li *ngFor="let code of codes" class="code__list">
+    <div class="code__list__card">
+      <app-code-container
+        [(code)]="code.codigo"
+        [(color)]="code.color"
+        class="code__list__card__content"
+      ></app-code-container>
+      <div class="code__list__card__info">
+        <h2 class="code__list__card__info__title">{{ code.name }}</h2>
+        <p class="code__list__card__info__description">
+          {{ code.description }}
+        </p>
+        <div class="code__list__card__info__social">
+          <app-social-buttons
+            class="code__list__card__info__social__buttons"
+            [socialData]="code.socialData"
+          ></app-social-buttons>
+          <app-author author="harry" [authorImag]="authorImg"></app-author>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
