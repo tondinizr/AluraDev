@@ -14,14 +14,11 @@
             [value]="code"
           ></textarea>
         </div>
-        <pre class="container__border__console__content__code">
-              <code
-                *ngIf="highlighted"
-                (highlighted)="onHighlight($event)"
-                [highlight]="code" [lineNumbers]="true"
-                style="white-space: pre-wrap"
-                ></code>
-            </pre>
+        <app-highlight-container
+          [code]="code"
+          [highlighted]="highlighted"
+          (highlightedEmitter)="onHighlight($event)"
+        ></app-highlight-container>
       </div>
     </div>
   </div>
