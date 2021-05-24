@@ -9,7 +9,11 @@ import { SocialData } from 'src/app/services/data/social-data';
   styleUrls: ['./social-buttons.component.scss'],
 })
 export class SocialButtonsComponent implements OnInit {
-  @Input() socialData!: SocialData;
+  @Input() socialData: SocialData = {
+    comments: 0,
+    likes: 0,
+    liked: false,
+  };
   @Input() idComment = 0;
   @Input() idAuthor = 0;
   faComment = faComment;

@@ -1,3 +1,4 @@
+import { CodeService } from './../../../services/data/code.service';
 import { Observable } from 'rxjs';
 import { PlatformService } from './../../../services/platform/platform.service';
 import {
@@ -26,7 +27,11 @@ export class ProjectPropertiesComponent implements OnInit {
 
   colors = ['#6BD1FF', '#9AFF6B', '#6B83FF', '#FFC46B', '#FF6BCD'];
 
-  constructor(private fb: FormBuilder, pS: PlatformService) {
+  constructor(
+    private fb: FormBuilder,
+    pS: PlatformService,
+    private codeService: CodeService
+  ) {
     this.platform = pS.getPlatform();
   }
 
@@ -42,7 +47,17 @@ export class ProjectPropertiesComponent implements OnInit {
   }
 
   sendData() {
-    console.log(this.propertiesForm.value);
+    var code = {
+      ...this.propertiesForm.value,
+      socialData: {
+        comments: 0,
+        likes: 0,
+        liked: false,
+      },
+    };
+    this.codeService.addCode(code).subscribe((code) => {
+      console.log(code);
+    });
   }
 
   onColorChange() {
