@@ -24,7 +24,7 @@ export class HeaderComponent {
   faTimes = faTimes;
   author = {
     name: 'Harry',
-    avatarUrl: '../../../assets/User/Photo.png',
+    avatarUrl: 'assets/User/Photo.png',
   };
 
   constructor() {}

@@ -53,25 +53,8 @@
     </div>
   </div>
 </header>
-<div
-  class="menu__overlay"
-  [ngClass]="isOpen ? 'open' : 'close'"
-  (click)="toggleMenu()"
->
-  <div class="menu__overlay__toggle" ngClass>
-    <fa-icon
-      class="menu__overlay__toggle__close"
-      [class.actived]="isOpen"
-      [icon]="faTimes"
-    ></fa-icon>
-  </div>
-  <nav class="menu__overlay__nav" (click)="stopPropagation($event)">
-    <app-menu class="menu__overlay__nav__navigation"></app-menu>
-    <hr class="menu__overlay__nav__separator" />
-    <app-author
-      author="Harry"
-      [authorImag]="authorImage"
-      class="menu__overlay__nav__user"
-    ></app-author>
-  </nav>
-</div>
+<app-navigation
+  [author]="author"
+  (menu)="toggleMenu()"
+  [isOpen]="isOpen"
+></app-navigation>

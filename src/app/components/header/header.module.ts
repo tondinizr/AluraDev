@@ -8,9 +8,10 @@ import { HeaderComponent } from './header.component';
 import { SearchBarModule } from '../search-bar/search-bar.module';
 import { AuthorModule } from '../author/author.module';
 import { MenuModule } from '../menu/menu.module';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
-  declarations: [HeaderComponent],
+  declarations: [HeaderComponent, NavigationComponent],
   imports: [
     CommonModule,
     FontAwesomeModule,
