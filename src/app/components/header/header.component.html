@@ -1,4 +1,4 @@
-<header class="header__{{ platform | async }}">
+<header class="header">
   <div class="header__container">
     <div class="header__container__logo">
       <a routerLink="/">
@@ -18,34 +18,28 @@
       </div>
     </div>
 
-    <div
-      *ngIf="(platform | async) === 'desktop'"
-      class="header__container__avatar"
-    >
+    <div class="header__container__avatar">
       <app-author author="Harry" [authorImag]="authorImage"></app-author>
     </div>
     <div
-      *ngIf="(platform | async) != 'desktop'"
-      class="header__container__Menu"
+      class="header__container__menu"
+      id="toggleMenu"
+      [class.actived]="isOpen"
     >
-      <div
-        *ngIf="
-          (valueSearch === '' && (platform | async) === 'tablet') ||
-          (platform | async) === 'mobile'
-        "
-        (click)="toggleMenu()"
-      >
-        <fa-icon [class.actived]="isOpen" clas="menu" [icon]="faBars"></fa-icon>
+      <div (click)="toggleMenu()" [class.hidden]="valueSearch && !mobile">
+        <fa-icon
+          [class.actived]="isOpen"
+          clas="menu-icon"
+          id="menu-icon"
+          [icon]="faBars"
+        ></fa-icon>
       </div>
-      <div
-        *ngIf="valueSearch != '' && (platform | async) === 'tablet'"
-        (click)="clearSearch()"
-      >
-        <fa-icon [icon]="faTimes"></fa-icon>
+      <div (click)="clearSearch()" [class.hidden]="!valueSearch || mobile">
+        <fa-icon clas="search-icon" id="search-icon" [icon]="faTimes"></fa-icon>
       </div>
     </div>
   </div>
-  <div id="search__mobile" class="search__mobile" [class.closed]="!search">
+  <div class="search__mobile" [class.hidden]="!search">
     <app-search-bar
       class="search__mobile__bar"
       [(value)]="valueSearch"
@@ -60,16 +54,14 @@
   </div>
 </header>
 <div
-  *ngIf="(platform | async) != 'desktop'"
   class="menu__overlay"
   [ngClass]="isOpen ? 'open' : 'close'"
   (click)="toggleMenu()"
 >
-  <div class="menu__overlay__toggle">
+  <div class="menu__overlay__toggle" ngClass>
     <fa-icon
       class="menu__overlay__toggle__close"
       [class.actived]="isOpen"
-      [class.mobile]="(platform | async) === 'mobile'"
       [icon]="faTimes"
     ></fa-icon>
   </div>

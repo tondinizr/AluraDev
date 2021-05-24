@@ -1,12 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import {
   faSearch,
   faBars,
   faTimes,
   faAngleUp,
 } from '@fortawesome/free-solid-svg-icons';
-import { Observable } from 'rxjs';
-import { PlatformService } from 'src/app/services/platform/platform.service';
 
 @Component({
   selector: 'app-header',
@@ -17,9 +15,9 @@ export class HeaderComponent {
   logoImage = 'assets/Logo.svg';
   authorImage = 'assets/User/Photo.png';
   valueSearch = '';
-  platform: Observable<string>;
   isOpen = false;
   search = false;
+  mobile = false;
   faSearch = faSearch;
   faAngleUp = faAngleUp;
   faBars = faBars;
@@ -29,9 +27,7 @@ export class HeaderComponent {
     avatarUrl: '../../../assets/User/Photo.png',
   };
 
-  constructor(private pS: PlatformService) {
-    this.platform = pS.getPlatform();
-  }
+  constructor() {}
 
   toggleMenu(): void {
     this.isOpen = !this.isOpen;
@@ -48,5 +44,20 @@ export class HeaderComponent {
 
   stopPropagation(event: any): void {
     event.stopPropagation();
+  }
+
+  @HostListener('window:resize')
+  onResize(): void {
+    this.changeWidht(window.innerWidth);
+  }
+
+  changeWidht(width: number): void {
+    if (width <= 576) {
+      this.mobile = true;
+    } else if (width <= 810) {
+      this.mobile = false;
+    } else {
+      this.mobile = false;
+    }
   }
 }
