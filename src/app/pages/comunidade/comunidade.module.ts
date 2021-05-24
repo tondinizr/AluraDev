@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -15,6 +16,7 @@ import { AuthorModule } from 'src/app/components/author/author.module';
     SocialButtonsModule,
     ComunidadeRoutingModule,
     AuthorModule,
+    RouterModule,
   ],
   exports: [ComunidadeComponent],
 })

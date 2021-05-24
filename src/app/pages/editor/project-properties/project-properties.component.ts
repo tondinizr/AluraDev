@@ -10,6 +10,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-project-properties',
@@ -30,7 +31,8 @@ export class ProjectPropertiesComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     pS: PlatformService,
-    private codeService: CodeService
+    private codeService: CodeService,
+    private router: Router
   ) {
     this.platform = pS.getPlatform();
   }
@@ -55,8 +57,8 @@ export class ProjectPropertiesComponent implements OnInit {
         liked: false,
       },
     };
-    this.codeService.addCode(code).subscribe((code) => {
-      console.log(code);
+    this.codeService.addCode(code).subscribe((res) => {
+      this.router.navigate(['comunidade', { id: res.id }]);
     });
   }
 

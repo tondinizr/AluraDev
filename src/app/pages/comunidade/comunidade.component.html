@@ -1,6 +1,6 @@
 <ul class="code">
   <li *ngFor="let code of codes" class="code__list">
-    <div class="code__list__card">
+    <div class="code__list__card" *ngIf="code; else none">
       <app-code-container
         [(code)]="code.codigo"
         [(color)]="code.color"
@@ -20,5 +20,10 @@
         </div>
       </div>
     </div>
+    <ng-template #none>
+      <div class="code__list__none">
+        Nenhum código encontrado com o id {{ codeId }}
+      </div>
+    </ng-template>
   </li>
 </ul>
